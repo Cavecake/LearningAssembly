@@ -2,6 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "by-gdb",
+            "request": "launch",
+            "name": "Launch(gdb)",
+            "program": "${fileDirname}/build/${fileBasenameNoExtension}",
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "LINK"
+        },
+        {
             "type": "gdb",
             "request": "launch",
             "name": "GDB64",
