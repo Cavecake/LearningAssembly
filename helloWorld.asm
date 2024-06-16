@@ -15,4 +15,4 @@ _start:
 
 section .data
 msg db 'Hello World', 0xa
-len equ $ - msg
+len equ $ - msg ; Setting a constant using equ
