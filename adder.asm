@@ -13,6 +13,9 @@ segment .data
    msg3 db "The sum is: "
    len3 equ $- msg3
 
+   msg db "The result for 2 * 3  is:", 0xA,0xD 
+    len equ $- msg  
+
 section .bss
     num1 resb 2
     num2 resb 2
@@ -72,6 +75,33 @@ _start:
     mov ecx, res
     mov edx, 1
     int 80h
+
+    ; Multiplication example
+    mov al, '2'
+    sub al, '0'
+
+    mov bl, '3'
+    sub bl, '0'
+
+    mul bl ; calculates al * bl and stores in ah and al or dx ax or edx and eax
+    ; this is depending on the size of the variables multiplied
+
+    add al, '0'
+
+    mov [res], al
+
+    ; Output
+    mov eax, SYS_WRITE
+    mov ebx, STDOUT
+    mov ecx, msg
+    mov edx, len
+    int 0x80
+
+    mov eax, SYS_WRITE
+    mov ebx, STDOUT
+    mov ecx, res
+    mov edx, 1
+    int 0x80
 
 exit:
     mov eax, SYS_EXIT
