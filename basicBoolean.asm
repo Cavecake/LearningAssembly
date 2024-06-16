@@ -33,7 +33,7 @@ _start:
     mov eax, [buffer]
     sub eax, '0'
 
-    and eax, 1
+    test eax, 1
     jz even
 odd:
     mov eax, SYS_WRITE
