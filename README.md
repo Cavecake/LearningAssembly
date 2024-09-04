@@ -1,10 +1,13 @@
 # LearningAssembly
- A repository to store some beginner code of assembly
+ A repository with some beginner assembly 32 bit code
+
 ## Requirements
 There are no requirements, but this guide is targeted for the people who fulfill the following requirements.
 
 Visual Stuido Code should be installed
 WSL with an Ubuntu distribution using wsl version 2 should be installed
+
+*Note: This will also work for some linux distributions.*
 
 ## Setting Up
 For the installation we will need to install an assembler, we will use nasm.
@@ -56,3 +59,4 @@ To do so switch to the wsl `wsl` and run `code` to start vs-code.
 
 Everything should know be ready, to test your setup with the helloWorld.asm.
 Just press F5
+
